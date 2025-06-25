@@ -55,9 +55,16 @@ Design prompt --> Test locally --> Deploy in production --> Evaluate performance
 - Introduce a convenient way to edit prompts in a structured, no-code way (required openai_key).
 
 
-## **Module 3**
+## **Module 4**
 ### **Lesson 1 - publishing_feedback**
 - Code fail.
 - Learn how to add feedback to runs, both manually in the LangSmith UI, programmatically in code.
 ### **Lesson 2 - annotation_queues**
 - Use annotation queues to label or review model outputs.
+
+
+## **Module 5**
+### **Lesson 1 - publishing_feedback**
+- Code fail.
+- Introduction to filtering in LangSmith.
+### **Lesson 2 - online_evaluation**
