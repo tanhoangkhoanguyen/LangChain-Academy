@@ -32,13 +32,11 @@ Steps to build a LangGraph:
 
 ### **Agent**
 - Turns tool usage into an intelligent agent:
-  - The graph loops back to the `tool_call_llm` node after execute the Tool functions.
-- LangSmith connection issues
 
 ### **Agent with Memory**
 - Add `MemorySaver` to store chat history. Use `thread_id` for session persistence `config = {"configurable": {"thread_id": "some_id"}}`.
 
-## **Module 2: Advanced Usage**
+## **Module 2**
 ### **State Schema**
 - Three common ways to define:
   - `TypedDict`, `dataclass`
@@ -53,3 +51,22 @@ Reducers are functions that update the state after each node runs.
 - `add`: enables **parallel execution** of nodes
 - **Branching**: run multiple paths concurrently
 - You can define **custom reducers** to control state updates as needed.
+
+
+
+
+### **Multiple Schema**
+We can define the in/output of the node 
+
+### **Filtering and trimming messages**
+There are a method, we can do to reduce the messages passed to LLM
+- reducer: add_messages + RemoveMessage
+- only pass the recent message to LLM `chat.invoke(state["messages"][-1:])`
+- trim_messages: can be implemented. However, if the lastest message is beyond 100 tokens, trim_messages will return an empty string (unwanted).
+
+### **Chatbot with message summarization**
+- To access the schema of a specific thread id, we use `graph.get_state(config).values.get("parameter","")`
+
+### **Chatbot with message summarization & external DB memory**
+- Squlite functions the same as MemorySaver in terms of `:memory:`
+- If we supply a path db, it will be different
