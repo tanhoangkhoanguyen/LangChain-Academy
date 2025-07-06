@@ -70,3 +70,37 @@ There are a method, we can do to reduce the messages passed to LLM
 ### **Chatbot with message summarization & external DB memory**
 - Squlite functions the same as MemorySaver in terms of `:memory:`
 - If we supply a path db, it will be different
+
+
+## **Module 3**
+### **Streaming**
+- Stream full state:
+  - values:
+  - Update
+- Streaming tokens -> live streaming the output
+
+### **Breakpoints & Editing graph state**
+- we can terminate the graph while it running with `graph = builder.compile(interrupt_before = ["node"])`
+- update graph state with `update_state`
+
+## **Time Travel**
+- Browsing History: Get the history
+- Replaying: replay at a specific step
+- Forking: update the entire history, reset it to the forking step and rerun (if ya want)
+
+
+## **Module: 4**
+### **Parallelization**
+- Order of adding `operator.add`
+- Customize the Tool `operator.add`
+
+### **Sub-graph**
+- Simple sub-graphs connection to the entry graph
+
+### **Map reduce**
+- map-reduce technique
+- with_structured_output(prompt): It tells the LLM to format its output in a way that can be parsed directly into the Subjects schema.
+
+### **Research Asisstant**
+- For Human-in-the-loop, we use stream
+- Mainly revision
